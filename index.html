@@ -1,1 +1,222 @@
-# KpRummikubTimer
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rummikub</title>
+    <link rel="website icon" type="png" href="https://cdn.glitch.global/3bd5bd69-164a-4d1d-bb74-72318aeea235/icon.jpg?v=1745408865121">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="select">
+        <h1 id="titleOfselect">Wybierz tryb gry</h1>
+        <lable class="playerLabel" for="playerName1">Nazwa gracza A</lable>
+        <input class="playerInput" id="playerName1" type="text">
+        <lable class="playerLabel" for="playerName2">Nazwa gracza B</lable>
+        <input class="playerInput" id="playerName2" type="text">
+        <lable class="playerLabel" for="playerName3">Nazwa gracza C</lable>
+        <input class="playerInput" id="playerName3" type="text">
+        <lable class="playerLabel" for="playerName4">Nazwa gracza D</lable>
+        <input class="playerInput" id="playerName4" type="text">
+        <br>
+        <div id="SetTimeDiv">
+            <label id="SettimeLabel" for="czas">Czas:</label>
+            <input id="czas" onchange="updateTime()" value="40" type="range">
+            <button id="number">40</button>
+        </div>
+        <br>
+        <div id="SetGameDiv">
+            <label id="SetGameLabel" for="Game">Rundy:</label>
+            <input id="Game" onchange="updateGame();" max="7" min="2" value="4" type="range">
+            <button id="numberOfGame">4</button>
+        </div>
+
+        <button type="submit" id="sendButton">Graj</button>
+    </div>
+
+    <!-- <div id="websiteBody"> -->
+        <header id="head">
+            <div id="headLeft">
+                <h1 id="nagl">KP Rummikub Timer</h1>
+            </div>
+            <div id="headRight"> 
+                <button id="StopTimer">Zatrzymaj Timer</button>
+                <button id="nowaGra">Nowa gra</button>
+            </div>
+        </header>
+
+        <section id="mainSection">
+            <section id="Timer">
+            
+                <button class="TimerButton" id="TimerButton">
+                    <div id="timeTimer">40</div>
+                </button>
+
+                <audio id="beep">
+                    <source src="https://cdn.glitch.global/3bd5bd69-164a-4d1d-bb74-72318aeea235/beep.mp3?v=1747496023537" type="audio/ogg" >
+                </audio>
+            </section>
+
+            <section id="Tabel">
+                <table>
+                    <tr id="naglTR">
+                        <th></th>
+                        <th id="GraczA_Title" class="GraczA"><p>Gracz A </p></th>
+                        <th id="GraczB_Title" class="GraczB"><p>Gracz B</p></th>
+                        <th id="GraczC_Title" class="GraczC"><p>Gracz C</p></th>
+                        <th id="GraczD_Title" class="GraczD"><p>Gracz D</p></th>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">1</td>
+                        <td> 
+                            <button onclick="reloadTab1(1)" class="newSystemButton" id="newSystem_1-1_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="1game1P2I" type="number"></td>
+
+                        <td>
+                            <button onclick="reloadTab1(2)" class="newSystemButton" id="newSystem_1-2_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="1game2P2I" type="number"></td>
+
+                        <td>
+                            <button onclick="reloadTab1(3)" class="newSystemButton" id="newSystem_1-3_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="1game3P2I" type="number"></td>
+
+                        <td>
+                            <button onclick="reloadTab1(4)" class="newSystemButton" id="newSystem_1-4_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="1game4P2I" type="number"></td>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">2</td>
+                            <td>
+                                <button onclick="reloadTab2(1)" class="newSystemButton" id="newSystem_2-1_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="2game1P2I" type="number">
+                            </td>
+                            <td>
+                                <button onclick="reloadTab2(2)" class="newSystemButton" id="newSystem_2-2_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="2game2P2I" type="number">
+                            </td>
+                            <td>
+                                <button onclick="reloadTab2(3)" class="newSystemButton" id="newSystem_2-3_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="2game3P2I" type="number">
+                            </td>
+                            <td>
+                                <button onclick="reloadTab2(4)" class="newSystemButton" id="newSystem_2-4_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="2game4P2I" type="number">
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">3</td>
+                            <td>
+                                <button onclick="reloadTab3(1)" class="newSystemButton" id="newSystem_3-1_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="3game1P2I" type="number"></td>
+                            <td>
+                                <button onclick="reloadTab3(2)" class="newSystemButton" id="newSystem_3-2_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="3game2P2I" type="number"></td>
+                            <td>
+                                <button onclick="reloadTab3(3)" class="newSystemButton" id="newSystem_3-3_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="3game3P2I" type="number"></td>
+                            <td>
+                                <button onclick="reloadTab3(4)" class="newSystemButton" id="newSystem_3-4_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="3game4P2I" type="number"></td>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">4</td>
+                            <td>
+                                <button onclick="reloadTab4(1)" class="newSystemButton" id="newSystem_4-1_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="4game1P2I" type="number"></td>
+                            <td>
+                                <button onclick="reloadTab4(2)" class="newSystemButton" id="newSystem_4-2_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="4game2P2I" type="number"></td>
+                            <td>
+                                <button onclick="reloadTab4(3)" class="newSystemButton" id="newSystem_4-3_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="4game3P2I" type="number"></td>
+                            <td>
+                                <button onclick="reloadTab4(4)" class="newSystemButton" id="newSystem_4-4_Button">0</button>
+                                <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="4game4P2I" type="number"></td>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">5</td>
+                        <td>
+                            <button onclick="reloadTab5(1)" class="newSystemButton" id="newSystem_5-1_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="5game1P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab5(2)" class="newSystemButton" id="newSystem_5-2_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="5game2P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab5(3)" class="newSystemButton" id="newSystem_5-3_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="5game3P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab5(4)" class="newSystemButton" id="newSystem_5-4_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="5game4P2I" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">6</td>
+                        <td>
+                            <button onclick="reloadTab6(1)" class="newSystemButton" id="newSystem_6-1_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="6game1P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab6(2)" class="newSystemButton" id="newSystem_6-2_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="6game2P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab6(3)" class="newSystemButton" id="newSystem_6-3_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="6game3P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab6(4)" class="newSystemButton" id="newSystem_6-4_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="6game4P2I" type="number">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bokInfo">7</td>
+                        <td>
+                            <button onclick="reloadTab7(1)" class="newSystemButton" id="newSystem_7-1_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="7game1P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab7(2)" class="newSystemButton" id="newSystem_7-2_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="7game2P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab7(3)" class="newSystemButton" id="newSystem_7-3_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="7game3P2I" type="number">
+                        </td>
+                        <td>
+                            <button onclick="reloadTab7(4)" class="newSystemButton" id="newSystem_7-4_Button">0</button>
+                            <input onchange="calc()" maxlength="3" value="0" min="-200" max="0" class="inputSecond" id="7game4P2I" type="number">
+                        </td>
+                    </tr>
+                    <tr id="sumaTR">
+                        <td class="bokInfo">Suma:</td>
+                        <td>
+                            <p class="wynikG" id="wynikG1">0</p>
+                            <p class="wynik" id="wynik1">0</p>
+                        </td>
+                        <td>
+                            <p class="wynikG" id="wynikG2">0</p>
+                            <p class="wynik" id="wynik2">0</p>
+                        </td>
+                            
+                        </td>
+                        <td>
+                            <p class="wynikG" id="wynikG3">0</p>
+                            <p class="wynik" id="wynik3">0</p>
+                        </td>
+                        <td>
+                            <p class="wynikG" id="wynikG4">0</p>
+                            <p class="wynik" id="wynik4">0</p>
+                        </td>
+                    </tr>
+                </table>
+
+            </section>
+        </section>
+    <!-- </div> -->
+</body>
+</html>

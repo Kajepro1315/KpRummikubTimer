@@ -1,0 +1,424 @@
+/* Paleta Kolorów
+
+tło: #060d6a oraz #010646
+
+napisy h1: #bb0202 oraz #700000
+
+napisy p: #ffebeb oraz  #dedede
+
+*/
+
+* {
+    margin: 0px 0px 0px 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 94vh;
+}
+
+#head {
+    margin: 0px;
+    background: linear-gradient(to right, #333aa0, #0c148a);
+    display: flex;
+    padding: 7px;
+    width: auto;
+    text-align: center;
+    border-bottom: #000000 1px solid;
+}
+
+#nagl {
+    background: linear-gradient(to bottom right, #c90101, #860101);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+    -webkit-text-stroke: #3d0000 0.4px;
+    margin: 7px;
+    letter-spacing: 2px;
+    font-size: 45px;
+}
+
+#nowaGra {
+    float: right;
+    font-size: 35px;
+    color: #000000;
+    background: linear-gradient(to bottom right, #c90101, #860101);
+    border: #000000 1px solid;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition-duration: 1s;
+}
+
+#nowaGra:hover {
+    cursor: pointer;
+    transform: scale(0.97,0.97);
+}
+
+#StopTimer {
+    float: right;
+    font-size: 35px;
+    color: #000000;
+    background: linear-gradient(to bottom right, #0190c9, #012486);
+    border: #000000 1px solid;
+    border-radius: 20px;
+    margin-left: 10px;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+
+#StopTimer:hover {
+    transform: scale(0.97,0.97);
+}
+
+#headLeft {
+    justify-content: start;
+    display: flex;
+    width: 70%;
+}
+
+#headRight {
+    justify-content: end;
+    display: flex;
+    width: 30%;
+}
+
+#mainSection {
+    width: auto;
+    display: flex;
+    height: 100%;
+}
+
+#Timer {
+    background-color: #2daae2;
+    width: 30%;
+    height: 100%;
+}
+
+#Tabel {
+    background-color: #5eb2d4;
+    width: 70%;
+    height: 100%;
+}
+
+.TimerButton {
+    width: 100%;
+    height: 100%;
+    background-color: #79f73f;
+    border: #425217 2px solid;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 1s;
+} 
+
+.TimerButton:hover {
+    transform: scale(0.993, 0.993);
+    cursor: pointer;
+}
+
+.Stoped {
+    background-color: #e33131;
+    border-color: #521010;
+}
+
+/* @keyframes newColor {
+    0% {border-color: #009dff;}
+    25% {border-color: #ff0000;}
+    75% {border-color: #ffc400;}
+    100% {border-color: #00ff2a;}
+} */
+
+#timeTimer {
+    border-radius: 200px;
+    width: 400px;
+    height: 400px;
+    background-color: #00111b;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    color: #fff;
+    font-size: 120px;
+    border: #006eb3 7px solid;
+    /* animation-name: newColor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    text-align: center;
+    display: flex;
+    align-items: center
+}
+
+
+#Tabel table {
+    border: #000000 2px solid;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    text-align: center;
+    background-color: #0080cf;
+}
+
+#Tabel table th {
+    border: #000000 2px solid;
+}
+
+#Tabel table td {
+    border: #000000 2px solid;
+}
+
+#sumaTR {
+    background-color: green;
+}
+
+.bokInfo {
+    background-color: #00588f;
+    font-size: 50px;
+    color: #fff;
+}
+
+#naglTR {
+    background-color: #00268f;
+}
+
+.wynikG {
+    float: left;
+    margin: 10px;
+    border-right: #000 2px solid;
+    padding-right: 40px;
+    height: 80%;
+    font-size: 60px;
+}
+
+.wynik {
+    float: right;
+    margin: 10px;
+    font-size: 60px;
+    margin-right: 10px;
+}
+
+.AktualnyGracz {
+    background-color: #00dacf;
+}
+
+.winner {
+    background-color: #00da0b;
+}
+
+.inputFirst { /* duże */
+    background: none;
+    border: none;
+    /* border-right: #000 2px solid; */
+    font-size: 35px;
+    height: 130px;
+    text-align: center;
+}
+
+.inputSecond { /* małe */
+    background: none;
+    border: none;
+    font-size: 35px;
+    height: 130px;
+    text-align: center;
+}
+
+.sixF {
+    font-size: 10px;
+}
+
+.sixS {
+    font-size: 30px;
+}
+
+.sevenF {
+    font-size: 15px;
+}
+
+.sevenS {
+    font-size: 25px;
+}
+
+#select {
+    right: calc(50% - 500px);
+    top: 30px;
+    position: absolute;
+    width: 1000px;
+    height: 900px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    background: linear-gradient(to bottom, #30328d, #3b434d);
+    z-index: 1;
+    display: flex; /* flex */
+    justify-content: flex-start;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 1.7px solid #000000;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(36, 38, 66, 0.25);
+    color: #76cbf3;
+    align-content: flex-start;
+}
+
+#titleOfselect {
+    font-size: 70px;
+    color: transparent;
+    letter-spacing: 4px;
+    gap: 10px;
+    background: linear-gradient(to bottom right, #c90101, #860101);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.playerInput {
+    width: 100%;
+    background-color: #0692d3;
+    height: 40px;
+    border-radius: 4px;
+    border: #000000 solid 2px;
+    font-size: 40px;
+}
+
+.playerLabel {
+    color: #01134d;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#SettimeLabel {
+    float: left;
+    color: #b30202;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+#SetGameLabel {
+    float: left;
+    color: #b30202;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+/* #czas[type="range"]::-webkit-slider-runnable-track {
+    border-radius: 5px;
+    background-color: #0692d3;
+    color: #eb0808;
+    font-size: 40px;
+}
+
+#czas[type="range"]::-webkit-slider-thumb {
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: rgb(0, 255, 76);
+}
+
+#czas {
+    width: 82%;
+    float: right;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: auto;
+
+    accent-color: red;
+} */
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 800px;
+    height: 10px;
+    float: right;
+
+    margin-right: 10px;
+    margin-left: auto;
+    margin-top: 33px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  background: #ff0000;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -15px; /* Dopasuj, by środek się zgadzał z trackiem */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 10px;
+  background: #0314ad;
+  border-radius: 3px;
+}
+
+
+#SetTimeDiv {
+    display: block;
+    height: auto;
+}
+
+#SetGameDiv {
+    display: block;
+    height: auto;
+}
+
+#number {
+    margin-top: 20px;
+    font-size: 40px;
+    margin-left: 0px;
+    margin-right: auto;
+    border: none;
+    background: none;
+    color: #76cbf3;
+    cursor: pointer;
+}
+
+#numberOfGame {
+    margin-top: 20px;
+    font-size: 40px;
+    margin-left: 0px;
+    margin-right: auto;
+    border: none;
+    background: none;
+    color: #76cbf3;
+    cursor: pointer;
+}
+
+#sendButton {
+    margin-bottom: 10px;
+    margin-top: auto;
+    border-radius: 10px;
+    height: 80px;
+    font-size: 60px;
+    box-shadow: 7px 7px rgba(36, 33, 99, 0.2);
+    background-color: #7fc1d7;
+    color: #07034f;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+#sendButton:hover {
+    box-shadow: 7px 7px rgba(36, 33, 99, 0.5);
+    background-color: #60a2b8;
+}
+
+.newSystemButton {
+    background: none;
+    border: none;
+    border-right: 2px solid #000000;
+    font-size: 35px;
+    height: 120px;
+    padding-right: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: auto;
+    cursor: pointer;
+}
