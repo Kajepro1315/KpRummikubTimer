@@ -298,6 +298,21 @@ let player131 = parseFloat(document.getElementById("newSystem_4-2_Button").textC
 let player231 = parseFloat(document.getElementById("newSystem_4-3_Button").textContent);
 let player331 = parseFloat(document.getElementById("newSystem_4-4_Button").textContent);
 
+let player041 = parseFloat(document.getElementById("newSystem_5-1_Button").textContent);
+let player141 = parseFloat(document.getElementById("newSystem_5-2_Button").textContent);
+let player241 = parseFloat(document.getElementById("newSystem_5-3_Button").textContent);
+let player341 = parseFloat(document.getElementById("newSystem_5-4_Button").textContent);
+
+let player051 = parseFloat(document.getElementById("newSystem_6-1_Button").textContent);
+let player151 = parseFloat(document.getElementById("newSystem_6-2_Button").textContent);
+let player251 = parseFloat(document.getElementById("newSystem_6-3_Button").textContent);
+let player351 = parseFloat(document.getElementById("newSystem_6-4_Button").textContent);
+
+let player061 = parseFloat(document.getElementById("newSystem_7-1_Button").textContent);
+let player161 = parseFloat(document.getElementById("newSystem_7-2_Button").textContent);
+let player261 = parseFloat(document.getElementById("newSystem_7-3_Button").textContent);
+let player361 = parseFloat(document.getElementById("newSystem_7-4_Button").textContent);
+
 let player0S1 = document.getElementById("wynikG1");
 let player1S1 = document.getElementById("wynikG2");
 let player2S1 = document.getElementById("wynikG3");
@@ -324,20 +339,35 @@ let player132 = parseFloat(document.getElementById("4game2P2I").value);
 let player232 = parseFloat(document.getElementById("4game3P2I").value);
 let player332 = parseFloat(document.getElementById("4game4P2I").value);
 
+let player042 = parseFloat(document.getElementById("5game1P2I").value);
+let player142 = parseFloat(document.getElementById("5game2P2I").value);
+let player242 = parseFloat(document.getElementById("5game3P2I").value);
+let player342 = parseFloat(document.getElementById("5game4P2I").value);
+
+let player052 = parseFloat(document.getElementById("6game1P2I").value);
+let player152 = parseFloat(document.getElementById("6game2P2I").value);
+let player252 = parseFloat(document.getElementById("6game3P2I").value);
+let player352 = parseFloat(document.getElementById("6game4P2I").value);
+
+let player062 = parseFloat(document.getElementById("7game1P2I").value);
+let player162 = parseFloat(document.getElementById("7game2P2I").value);
+let player262 = parseFloat(document.getElementById("7game3P2I").value);
+let player362 = parseFloat(document.getElementById("7game4P2I").value);
+
 let player0S2 = document.getElementById("wynik1");
 let player1S2 = document.getElementById("wynik2");
 let player2S2 = document.getElementById("wynik3");
 let player3S2 = document.getElementById("wynik4");
 
-let wynik0 = player001 + player011 + player021 + player031;
-let wynik1 = player101 + player111 + player121 + player131;
-let wynik2 = player201 + player211 + player221 + player231;
-let wynik3 = player301 + player311 + player321 + player331;
+let wynik0 = player001 + player011 + player021 + player031 + player041 + player051 + player061;
+let wynik1 = player101 + player111 + player121 + player131 + player141 + player151 + player161;
+let wynik2 = player201 + player211 + player221 + player231 + player241 + player251 + player261;
+let wynik3 = player301 + player311 + player321 + player331 + player341 + player351 + player361;
 
-let wynik4 = player002 + player012 + player022 + player032;
-let wynik5 = player102 + player112 + player122 + player132;
-let wynik6 = player202 + player212 + player222 + player232;
-let wynik7 = player302 + player312 + player322 + player332;
+let wynik4 = player002 + player012 + player022 + player032 + player042 + player052 + player062;
+let wynik5 = player102 + player112 + player122 + player132 + player142 + player152 + player162;
+let wynik6 = player202 + player212 + player222 + player232 + player242 + player252 + player262;
+let wynik7 = player302 + player312 + player322 + player332 + player342 + player352 + player362;
 
 player0S1.textContent = wynik0;
 player1S1.textContent = wynik1;
@@ -534,7 +564,6 @@ calc();
 }
 
 
-
 function reloadTab4(i) {
 calc();
 const BTN_1 = document.getElementById("newSystem_4-1_Button");
@@ -556,6 +585,178 @@ let player002 = parseFloat(document.getElementById("4game1P2I").value);
 let player102 = parseFloat(document.getElementById("4game2P2I").value);
 let player202 = parseFloat(document.getElementById("4game3P2I").value);
 let player302 = parseFloat(document.getElementById("4game4P2I").value);
+
+switch(i) {
+case 1:
+BTN_1.textContent = 1;
+let wynik1 = player102 + player202 + player302;
+wynik1 = "" + wynik1;
+wynik1 = wynik1.replace("-", "");
+player002C.value = wynik1;
+break;
+case 2:
+BTN_2.textContent = 1;
+let wynik2 = player002 + player202 + player302;
+wynik2 = "" + wynik2;
+wynik2 = wynik2.replace("-", "");
+player102C.value = wynik2;
+break;
+case 3:
+BTN_3.textContent = 1;
+let wynik3 = player102 + player002 + player302;
+wynik3 = "" + wynik3;
+wynik3 = wynik3.replace("-", "");
+player202C.value = wynik3;
+break;
+case 4:
+BTN_4.textContent = 1;
+let wynik4 = player102 + player202 + player002;
+wynik4 = "" + wynik4;
+wynik4 = wynik4.replace("-", "");
+player302C.value = wynik4;
+break;
+}
+
+calc();
+}
+
+function reloadTab5(i) {
+calc();
+const BTN_1 = document.getElementById("newSystem_5-1_Button");
+const BTN_2 = document.getElementById("newSystem_5-2_Button");
+const BTN_3 = document.getElementById("newSystem_5-3_Button");
+const BTN_4 = document.getElementById("newSystem_5-4_Button");
+
+BTN_1.textContent = 0;
+BTN_2.textContent = 0;
+BTN_3.textContent = 0;
+BTN_4.textContent = 0;
+
+let player002C = document.getElementById("5game1P2I");
+let player102C = document.getElementById("5game2P2I");
+let player202C = document.getElementById("5game3P2I");
+let player302C = document.getElementById("5game4P2I");
+
+let player002 = parseFloat(document.getElementById("5game1P2I").value);
+let player102 = parseFloat(document.getElementById("5game2P2I").value);
+let player202 = parseFloat(document.getElementById("5game3P2I").value);
+let player302 = parseFloat(document.getElementById("5game4P2I").value);
+
+switch(i) {
+case 1:
+BTN_1.textContent = 1;
+let wynik1 = player102 + player202 + player302;
+wynik1 = "" + wynik1;
+wynik1 = wynik1.replace("-", "");
+player002C.value = wynik1;
+break;
+case 2:
+BTN_2.textContent = 1;
+let wynik2 = player002 + player202 + player302;
+wynik2 = "" + wynik2;
+wynik2 = wynik2.replace("-", "");
+player102C.value = wynik2;
+break;
+case 3:
+BTN_3.textContent = 1;
+let wynik3 = player102 + player002 + player302;
+wynik3 = "" + wynik3;
+wynik3 = wynik3.replace("-", "");
+player202C.value = wynik3;
+break;
+case 4:
+BTN_4.textContent = 1;
+let wynik4 = player102 + player202 + player002;
+wynik4 = "" + wynik4;
+wynik4 = wynik4.replace("-", "");
+player302C.value = wynik4;
+break;
+}
+
+calc();
+}
+
+
+
+function reloadTab6(i) {
+calc();
+const BTN_1 = document.getElementById("newSystem_6-1_Button");
+const BTN_2 = document.getElementById("newSystem_6-2_Button");
+const BTN_3 = document.getElementById("newSystem_6-3_Button");
+const BTN_4 = document.getElementById("newSystem_6-4_Button");
+
+BTN_1.textContent = 0;
+BTN_2.textContent = 0;
+BTN_3.textContent = 0;
+BTN_4.textContent = 0;
+
+let player002C = document.getElementById("6game1P2I");
+let player102C = document.getElementById("6game2P2I");
+let player202C = document.getElementById("6game3P2I");
+let player302C = document.getElementById("6game4P2I");
+
+let player002 = parseFloat(document.getElementById("6game1P2I").value);
+let player102 = parseFloat(document.getElementById("6game2P2I").value);
+let player202 = parseFloat(document.getElementById("6game3P2I").value);
+let player302 = parseFloat(document.getElementById("6game4P2I").value);
+
+switch(i) {
+case 1:
+BTN_1.textContent = 1;
+let wynik1 = player102 + player202 + player302;
+wynik1 = "" + wynik1;
+wynik1 = wynik1.replace("-", "");
+player002C.value = wynik1;
+break;
+case 2:
+BTN_2.textContent = 1;
+let wynik2 = player002 + player202 + player302;
+wynik2 = "" + wynik2;
+wynik2 = wynik2.replace("-", "");
+player102C.value = wynik2;
+break;
+case 3:
+BTN_3.textContent = 1;
+let wynik3 = player102 + player002 + player302;
+wynik3 = "" + wynik3;
+wynik3 = wynik3.replace("-", "");
+player202C.value = wynik3;
+break;
+case 4:
+BTN_4.textContent = 1;
+let wynik4 = player102 + player202 + player002;
+wynik4 = "" + wynik4;
+wynik4 = wynik4.replace("-", "");
+player302C.value = wynik4;
+break;
+}
+
+calc();
+}
+
+
+
+function reloadTab7(i) {
+calc();
+const BTN_1 = document.getElementById("newSystem_7-1_Button");
+const BTN_2 = document.getElementById("newSystem_7-2_Button");
+const BTN_3 = document.getElementById("newSystem_7-3_Button");
+const BTN_4 = document.getElementById("newSystem_7-4_Button");
+
+BTN_1.textContent = 0;
+BTN_2.textContent = 0;
+BTN_3.textContent = 0;
+BTN_4.textContent = 0;
+
+let player002C = document.getElementById("7game1P2I");
+let player102C = document.getElementById("7game2P2I");
+let player202C = document.getElementById("7game3P2I");
+let player302C = document.getElementById("7game4P2I");
+
+let player002 = parseFloat(document.getElementById("7game1P2I").value);
+let player102 = parseFloat(document.getElementById("7game2P2I").value);
+let player202 = parseFloat(document.getElementById("7game3P2I").value);
+let player302 = parseFloat(document.getElementById("7game4P2I").value);
 
 switch(i) {
 case 1:
