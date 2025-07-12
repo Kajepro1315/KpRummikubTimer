@@ -6,7 +6,14 @@ const sliderGame = document.getElementById("Game");
 const Game = document.getElementById("numberOfGame");
 const SmalPoint = document.querySelectorAll('.inputSecond');
 const BigPoints = document.querySelectorAll('.newSystemButton');
+const BokInfo = document.querySelectorAll('.bokInfo');
 
+const Tr2 = document.getElementById("Tr2");
+const Tr3 = document.getElementById("Tr3");
+const Tr4 = document.getElementById("Tr4");
+const Tr5 = document.getElementById("Tr5");
+const Tr6 = document.getElementById("Tr6");
+const Tr7 = document.getElementById("Tr7");
 
 let isTimerEnable = false;
 
@@ -20,28 +27,110 @@ function updateTime() {
 function updateGame() {
     Game.textContent = sliderGame.value + " gry";
     switch(sliderGame.value) {
-        case "6":
-            SmalPoint.forEach(el => el.classList.add("sixS"));
-            BigPoints.forEach(el => el.classList.add("sixF"));
+        case "2":
+            SmalPoint.forEach(el => el.classList.remove("sixS"));
+            BigPoints.forEach(el => el.classList.remove("sixF")); 
+            BokInfo.forEach(el => el.classList.remove("sixB"));
 
             SmalPoint.forEach(el => el.classList.remove("sevenS"));
             BigPoints.forEach(el => el.classList.remove("sevenF"));
+            BokInfo.forEach(el => el.classList.remove("sevenB"));
+
+            Tr2.style.display = "table-row";
+            Tr3.style.display = "none";
+            Tr4.style.display = "none";
+            Tr5.style.display = "none";
+            Tr6.style.display = "none";
+            Tr7.style.display = "none";
+            break;
+
+        case "3":
+            SmalPoint.forEach(el => el.classList.remove("sixS"));
+            BigPoints.forEach(el => el.classList.remove("sixF")); 
+            BokInfo.forEach(el => el.classList.remove("sixB"));
+
+            SmalPoint.forEach(el => el.classList.remove("sevenS"));
+            BigPoints.forEach(el => el.classList.remove("sevenF"));
+            BokInfo.forEach(el => el.classList.remove("sevenB"));
+
+            Tr2.style.display = "table-row";
+            Tr3.style.display = "table-row";
+            Tr4.style.display = "none";
+            Tr5.style.display = "none";
+            Tr6.style.display = "none";
+            Tr7.style.display = "none";
+            break;
+
+        case "4":
+            SmalPoint.forEach(el => el.classList.remove("sixS"));
+            BigPoints.forEach(el => el.classList.remove("sixF")); 
+            BokInfo.forEach(el => el.classList.remove("sixB"));
+
+            SmalPoint.forEach(el => el.classList.remove("sevenS"));
+            BigPoints.forEach(el => el.classList.remove("sevenF"));
+            BokInfo.forEach(el => el.classList.remove("sevenB"));
+
+            Tr2.style.display = "table-row";
+            Tr3.style.display = "table-row";
+            Tr4.style.display = "table-row";
+            Tr5.style.display = "none";
+            Tr6.style.display = "none";
+            Tr7.style.display = "none";
+            break;
+
+        case "5":
+            SmalPoint.forEach(el => el.classList.remove("sixS"));
+            BigPoints.forEach(el => el.classList.remove("sixF")); 
+            BokInfo.forEach(el => el.classList.remove("sixB"));
+
+            SmalPoint.forEach(el => el.classList.remove("sevenS"));
+            BigPoints.forEach(el => el.classList.remove("sevenF"));
+            BokInfo.forEach(el => el.classList.remove("sevenB"));
+
+            Tr2.style.display = "table-row";
+            Tr3.style.display = "table-row";
+            Tr4.style.display = "table-row";
+            Tr5.style.display = "table-row";
+            Tr6.style.display = "none";
+            Tr7.style.display = "none";
+            break;
+
+        case "6":
+            SmalPoint.forEach(el => el.classList.add("sixS"));
+            BigPoints.forEach(el => el.classList.add("sixF")); 
+            BokInfo.forEach(el => el.classList.add("sixB"));
+
+            SmalPoint.forEach(el => el.classList.remove("sevenS"));
+            BigPoints.forEach(el => el.classList.remove("sevenF"));
+            BokInfo.forEach(el => el.classList.remove("sevenB"));
+
+            Tr2.style.display = "table-row";
+            Tr3.style.display = "table-row";
+            Tr4.style.display = "table-row";
+            Tr5.style.display = "table-row";
+            Tr6.style.display = "table-row";
+            Tr7.style.display = "none";
             break;
 
         case "7":
+            SmalPoint.forEach(el => el.classList.remove("sixS"));
+            BigPoints.forEach(el => el.classList.remove("sixF")); 
+            BokInfo.forEach(el => el.classList.remove("sixB"));
+
             SmalPoint.forEach(el => el.classList.add("sevenS"));
             BigPoints.forEach(el => el.classList.add("sevenF"));
+            BokInfo.forEach(el => el.classList.add("sevenB"));
 
-            SmalPoint.forEach(el => el.classList.remove("sixS"));
-            BigPoints.forEach(el => el.classList.remove("sixF"));
+            Tr2.style.display = "table-row";
+            Tr3.style.display = "table-row";
+            Tr4.style.display = "table-row";
+            Tr5.style.display = "table-row";
+            Tr6.style.display = "table-row";
+            Tr7.style.display = "table-row";
             break;
 
         default:
-            SmalPoint.forEach(el => el.classList.remove("sixS"));
-            BigPoints.forEach(el => el.classList.remove("sixF")); 
-
-            SmalPoint.forEach(el => el.classList.remove("sevenS"));
-            BigPoints.forEach(el => el.classList.remove("sevenF"));
+            alert("Error 404");
             break;
     }
 }

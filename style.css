@@ -179,6 +179,7 @@ body {
 
 #naglTR {
     background-color: #00268f;
+    height: 50px;
 }
 
 .wynikG {
@@ -222,20 +223,34 @@ body {
     text-align: center;
 }
 
-.sixF {
-    font-size: 10px;
-}
-
-.sixS {
-    font-size: 30px;
-}
-
-.sevenF {
-    font-size: 15px;
-}
-
-.sevenS {
+.newSystemButton.sixF {
     font-size: 25px;
+    height: 95px;
+}
+
+.inputSecond.sixS {
+    font-size: 25px;
+    height: 95px;
+}
+
+.bokInfo.sixB {
+    font-size: 30px;
+    height: 95px;
+}
+
+.newSystemButton.sevenF {
+    font-size: 20px;
+    height: 90px;
+}
+
+.inputSecond.sevenS {
+    font-size: 20px;
+    height: 90px;
+}
+
+.bokInfo.sevenB {
+    font-size: 25px;
+    height: 90px;
 }
 
 #select {
